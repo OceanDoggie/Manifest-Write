@@ -75,7 +75,7 @@ export default function PricingCards() {
           {pricingOptions.map((option) => (
             <Card 
               key={option.id} 
-              className={`p-8 relative pearl-crystal-bg pearl-shimmer hover-elevate transition-all duration-300 mystical-symbol-bg ${
+              className={`p-8 relative pearl-crystal-bg pearl-shimmer liquid-glow hover-elevate transition-all duration-300 mystical-symbol-bg ${
                 option.popular ? 'ring-2 ring-primary scale-105' : ''
               }`}
             >

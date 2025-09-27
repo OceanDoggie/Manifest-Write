@@ -27,7 +27,7 @@ export default function PreviewModal({ isOpen, onClose, worksheetType, price }: 
 
   return (
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
-      <Card className="max-w-4xl w-full max-h-[90vh] overflow-hidden pearl-crystal-bg relative mystical-symbol-bg">
+      <Card className="max-w-4xl w-full max-h-[90vh] overflow-hidden pearl-crystal-bg liquid-glow relative mystical-symbol-bg">
         {/* Header */}
         <div className="flex items-center justify-between p-6 border-b">
           <div className="flex items-center space-x-4">

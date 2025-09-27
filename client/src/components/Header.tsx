@@ -19,7 +19,7 @@ export default function Header() {
           <div className="absolute inset-0 text-white text-xs flex items-center justify-center font-bold">✧</div>
         </div>
         <h1 className="text-xl font-serif font-semibold text-foreground">
-          <span className="mystical-symbol">☽</span> Manifest Write <span className="mystical-symbol">✧</span>
+          Manifest Write
         </h1>
       </div>
       

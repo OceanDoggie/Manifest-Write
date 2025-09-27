@@ -38,12 +38,12 @@ export default function ProcessOverview() {
 
         <div className="grid md:grid-cols-3 gap-8">
           {steps.map((step, index) => (
-            <Card key={index} className="p-8 text-center pearl-crystal-bg pearl-shimmer hover-elevate transition-all duration-300 relative">
+            <Card key={index} className="p-8 text-center pearl-crystal-bg pearl-shimmer liquid-glow hover-elevate transition-all duration-300 relative">
               <div className="absolute top-4 right-4 text-2xl mystical-symbol opacity-30">
                 {index === 0 ? '☾' : index === 1 ? '✧' : '☽'}
               </div>
               <div className="flex justify-center mb-6">
-                <div className="w-16 h-16 bg-gradient-to-br from-primary/20 via-accent/20 to-primary/20 rounded-full flex items-center justify-center mystical-symbol">
+                <div className="w-16 h-16 bg-gradient-to-br from-primary/20 via-accent/20 to-primary/20 rounded-full flex items-center justify-center mystical-symbol liquid-glow">
                   <step.icon className={`h-8 w-8 ${step.color}`} />
                 </div>
               </div>
