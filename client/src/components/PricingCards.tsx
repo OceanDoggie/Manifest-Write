@@ -5,52 +5,65 @@ import { Check, Star, Heart } from "lucide-react";
 
 const pricingOptions = [
   {
-    id: 'affirmation',
-    name: 'Affirmation Worksheet',
-    price: '$1.49',
-    description: 'Perfect for daily practice',
+    id: 'calligraphy-worksheet',
+    name: 'Calligraphy Practice Worksheet',
+    price: '$2.99',
+    description: 'Beautiful handwriting practice',
     features: [
-      '1-3 powerful affirmations',
-      'Single page A4 format',
-      'Tracing & practice sections',
-      'Daily check-in space',
+      'Your personalized affirmations',
+      'Beautiful calligraphy fonts',
+      'Practice lines & guides',
+      'Decorative border design',
+      'A4 PDF for printing',
       'Instant download'
     ],
     icon: Heart,
-    popular: false
+    popular: false,
+    type: 'download'
   },
   {
-    id: 'script',
-    name: 'Manifestation Script',
-    price: '$2.99',
-    description: 'Deep transformational practice',
+    id: 'immersive-script',
+    name: 'Immersive Manifestation Script',
+    price: '$4.99',
+    description: 'Deep transformation journey',
     features: [
-      'Full 300-500 word script',
-      '2-3 pages A4 format',
-      'Multiple practice sections',
-      'Weekly progress tracker',
-      'Bonus guided meditation text',
+      'Extended 3+ page script',
+      'Rich sensory details',
+      'Multiple practice sessions',
+      'Professional layout',
+      'Printable PDF format',
       'Instant download'
     ],
     icon: Star,
-    popular: true
+    popular: true,
+    type: 'download'
   },
   {
     id: 'bundle',
-    name: '7-Day Journey',
-    price: '$4.99',
-    description: 'Complete transformation package',
+    name: 'Complete Practice Bundle',
+    price: '$6.99',
+    description: 'Everything you need',
     features: [
-      'Daily affirmations + script',
-      '7 complete worksheets',
-      'Progress tracking pages',
-      'Reflection journal prompts',
-      'Success celebration page',
-      'Instant download bundle'
+      'Calligraphy worksheet',
+      'Immersive script PDF',
+      '7-day practice guide',
+      'Progress tracking sheets',
+      'Meditation bonus content',
+      'All formats included'
     ],
     icon: Check,
-    popular: false
+    popular: false,
+    type: 'download'
   }
+];
+
+const freeFeatures = [
+  'AI-generated personalized affirmations',
+  'Short manifestation scripts',
+  'Font preview & selection',
+  'Beautiful card-style layouts',
+  'Unlimited regeneration',
+  'Online viewing & reading'
 ];
 
 export default function PricingCards() {
@@ -64,10 +77,40 @@ export default function PricingCards() {
       <div className="max-w-6xl mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-serif font-bold text-foreground mb-6">
-            Choose Your Practice
+            Free to Create, Pay to Download
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Start your manifestation journey with beautifully crafted worksheets
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
+            Generate unlimited personalized content for free. Only pay when you want to download practice worksheets.
+          </p>
+          
+          {/* Free Features Section */}
+          <Card className="max-w-4xl mx-auto p-8 pearl-crystal-bg mb-12">
+            <div className="text-center mb-6">
+              <h3 className="text-2xl font-serif font-bold text-primary mb-4">
+                ✨ Always Free ✨
+              </h3>
+              <p className="text-muted-foreground">
+                Everything you need to start manifesting, completely free
+              </p>
+            </div>
+            
+            <div className="grid md:grid-cols-2 gap-4">
+              {freeFeatures.map((feature, index) => (
+                <div key={index} className="flex items-center space-x-3">
+                  <Check className="h-4 w-4 text-primary flex-shrink-0" />
+                  <span className="text-foreground">{feature}</span>
+                </div>
+              ))}
+            </div>
+          </Card>
+        </div>
+
+        <div className="text-center mb-8">
+          <h3 className="text-3xl font-serif font-bold text-foreground mb-4">
+            Premium Downloads
+          </h3>
+          <p className="text-muted-foreground">
+            Take your practice offline with beautiful, printable formats
           </p>
         </div>
 
@@ -119,15 +162,18 @@ export default function PricingCards() {
                 onClick={() => handlePurchase(option.id)}
                 data-testid={`button-purchase-${option.id}`}
               >
-                {option.popular ? 'Get Started' : 'Choose Plan'}
+                Download Now
               </Button>
             </Card>
           ))}
         </div>
 
         <div className="text-center mt-12">
-          <p className="text-muted-foreground">
-            All purchases include lifetime access and can be reprinted unlimited times
+          <p className="text-muted-foreground mb-4">
+            All downloads include lifetime access and can be reprinted unlimited times
+          </p>
+          <p className="text-sm text-muted-foreground">
+            Create and preview your content first • Only pay for what you want to download
           </p>
         </div>
       </div>
