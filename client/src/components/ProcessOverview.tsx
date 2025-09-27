@@ -24,8 +24,9 @@ const steps = [
 
 export default function ProcessOverview() {
   return (
-    <section className="py-24 bg-muted/30">
-      <div className="max-w-6xl mx-auto px-6">
+    <section className="py-24 relative mystical-symbol-bg">
+      <div className="absolute inset-0 bg-gradient-to-br from-muted/20 via-accent/5 to-primary/10"></div>
+      <div className="max-w-6xl mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-serif font-bold text-foreground mb-6">
             How It Works
@@ -37,9 +38,12 @@ export default function ProcessOverview() {
 
         <div className="grid md:grid-cols-3 gap-8">
           {steps.map((step, index) => (
-            <Card key={index} className="p-8 text-center hover-elevate transition-all duration-300">
+            <Card key={index} className="p-8 text-center pearl-crystal-bg pearl-shimmer hover-elevate transition-all duration-300 relative">
+              <div className="absolute top-4 right-4 text-2xl mystical-symbol opacity-30">
+                {index === 0 ? '☾' : index === 1 ? '✧' : '☽'}
+              </div>
               <div className="flex justify-center mb-6">
-                <div className="w-16 h-16 bg-card rounded-full flex items-center justify-center">
+                <div className="w-16 h-16 bg-gradient-to-br from-primary/20 via-accent/20 to-primary/20 rounded-full flex items-center justify-center mystical-symbol">
                   <step.icon className={`h-8 w-8 ${step.color}`} />
                 </div>
               </div>

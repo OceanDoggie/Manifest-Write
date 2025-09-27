@@ -59,8 +59,9 @@ export default function PricingCards() {
   };
 
   return (
-    <section className="py-24 bg-muted/20">
-      <div className="max-w-6xl mx-auto px-6">
+    <section className="py-24 relative mystical-symbol-bg">
+      <div className="absolute inset-0 bg-gradient-to-br from-muted/10 via-accent/5 to-primary/5"></div>
+      <div className="max-w-6xl mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-serif font-bold text-foreground mb-6">
             Choose Your Practice
@@ -74,7 +75,7 @@ export default function PricingCards() {
           {pricingOptions.map((option) => (
             <Card 
               key={option.id} 
-              className={`p-8 relative hover-elevate transition-all duration-300 ${
+              className={`p-8 relative pearl-crystal-bg pearl-shimmer hover-elevate transition-all duration-300 mystical-symbol-bg ${
                 option.popular ? 'ring-2 ring-primary scale-105' : ''
               }`}
             >

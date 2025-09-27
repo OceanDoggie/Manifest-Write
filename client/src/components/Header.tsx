@@ -12,10 +12,15 @@ export default function Header() {
   };
 
   return (
-    <header className="flex items-center justify-between p-6 bg-background/80 backdrop-blur-sm border-b border-border">
-      <div className="flex items-center space-x-2">
-        <div className="w-8 h-8 bg-gradient-to-br from-primary to-accent rounded-full"></div>
-        <h1 className="text-xl font-serif font-semibold text-foreground">Manifest Write</h1>
+    <header className="flex items-center justify-between p-6 pearl-crystal-bg border-b border-border/50 relative mystical-symbol-bg">
+      <div className="flex items-center space-x-3">
+        <div className="relative">
+          <div className="w-8 h-8 bg-gradient-to-br from-primary via-accent to-primary rounded-full mystical-symbol"></div>
+          <div className="absolute inset-0 text-white text-xs flex items-center justify-center font-bold">✧</div>
+        </div>
+        <h1 className="text-xl font-serif font-semibold text-foreground">
+          <span className="mystical-symbol">☽</span> Manifest Write <span className="mystical-symbol">✧</span>
+        </h1>
       </div>
       
       <nav className="hidden md:flex items-center space-x-8">

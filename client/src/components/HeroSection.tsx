@@ -21,9 +21,10 @@ export default function HeroSection() {
       {/* Content */}
       <div className="relative z-10 text-center max-w-4xl mx-auto px-6">
         <div className="flex justify-center mb-6">
-          <div className="flex items-center space-x-2 bg-primary/10 backdrop-blur-sm px-4 py-2 rounded-full">
-            <Sparkles className="h-4 w-4 text-primary" />
+          <div className="flex items-center space-x-2 pearl-crystal-bg backdrop-blur-sm px-4 py-2 rounded-full mystical-symbol">
+            <span className="text-primary">✧</span>
             <span className="text-sm font-medium text-primary">AI-Powered Manifestation</span>
+            <span className="text-primary">☽</span>
           </div>
         </div>
 
@@ -60,16 +61,16 @@ export default function HeroSection() {
 
         {/* Feature Pills */}
         <div className="flex flex-wrap justify-center gap-4">
-          <div className="flex items-center space-x-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full">
-            <Heart className="h-4 w-4 text-red-400" />
+          <div className="flex items-center space-x-2 pearl-crystal-bg backdrop-blur-sm px-4 py-2 rounded-full">
+            <span className="mystical-symbol">♡</span>
             <span className="text-white text-sm">Personalized AI</span>
           </div>
-          <div className="flex items-center space-x-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full">
-            <PenTool className="h-4 w-4 text-blue-400" />
+          <div className="flex items-center space-x-2 pearl-crystal-bg backdrop-blur-sm px-4 py-2 rounded-full">
+            <span className="mystical-symbol">☾</span>
             <span className="text-white text-sm">Beautiful Calligraphy</span>
           </div>
-          <div className="flex items-center space-x-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full">
-            <Sparkles className="h-4 w-4 text-yellow-400" />
+          <div className="flex items-center space-x-2 pearl-crystal-bg backdrop-blur-sm px-4 py-2 rounded-full">
+            <span className="mystical-symbol">✧</span>
             <span className="text-white text-sm">Instant Download</span>
           </div>
         </div>

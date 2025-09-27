@@ -97,7 +97,7 @@ export default function FontSelector() {
         {filteredFonts.map((font) => (
           <Card 
             key={font.id} 
-            className={`p-6 cursor-pointer transition-all duration-300 hover-elevate ${
+            className={`p-6 cursor-pointer pearl-crystal-bg pearl-shimmer transition-all duration-300 hover-elevate relative mystical-symbol-bg ${
               selectedFont === font.id ? 'ring-2 ring-primary bg-primary/5' : ''
             }`}
             onClick={() => handleFontSelect(font.id)}

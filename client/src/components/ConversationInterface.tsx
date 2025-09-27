@@ -89,7 +89,7 @@ ${mockScript}`);
 
   if (generatedContent) {
     return (
-      <Card className="max-w-4xl mx-auto p-8">
+      <Card className="max-w-4xl mx-auto p-8 pearl-crystal-bg pearl-shimmer relative mystical-symbol-bg">
         <div className="text-center mb-8">
           <Sparkles className="h-12 w-12 text-primary mx-auto mb-4" />
           <h2 className="text-3xl font-serif font-bold text-foreground mb-2">
@@ -121,7 +121,7 @@ ${mockScript}`);
   }
 
   return (
-    <Card className="max-w-2xl mx-auto p-8">
+    <Card className="max-w-2xl mx-auto p-8 pearl-crystal-bg pearl-shimmer relative mystical-symbol-bg">
       <div className="mb-8">
         <div className="flex items-center justify-between mb-6">
           <div className="flex items-center space-x-2">
