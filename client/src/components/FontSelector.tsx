@@ -13,12 +13,17 @@ interface FontOption {
   description: string;
 }
 
+interface FontSelectorProps {
+  onFontSelected?: (fontId: string) => void;
+  onPreviewWorksheet?: (fontId: string) => void;
+}
+
 const fontOptions: FontOption[] = [
   {
     id: 'chinese-kai',
     name: 'Traditional Kaishu',
     category: 'Chinese',
-    style: 'font-serif',
+    style: 'elegant-script',
     preview: '我轻松地创造出与我价值对齐的收入流',
     description: 'Classic Chinese calligraphy, perfect for traditional manifestations'
   },
@@ -26,29 +31,61 @@ const fontOptions: FontOption[] = [
     id: 'chinese-xing',
     name: 'Flowing Xingshu',
     category: 'Chinese', 
-    style: 'font-serif italic',
+    style: 'flowing-script',
     preview: '我值得拥有丰盛的生活和内心的平静',
     description: 'Semi-cursive style that flows like water'
+  },
+  {
+    id: 'chinese-song',
+    name: 'Modern Songti',
+    category: 'Chinese',
+    style: 'modern-print',
+    preview: '丰盛和成功自然地流向我',
+    description: 'Contemporary Chinese font with clean lines'
   },
   {
     id: 'english-script',
     name: 'Elegant Script',
     category: 'English',
-    style: 'font-serif italic',
+    style: 'elegant-script',
     preview: 'I am perfectly aligned with abundance',
     description: 'Beautiful flowing cursive for English affirmations'
+  },
+  {
+    id: 'english-cursive',
+    name: 'Modern Cursive',
+    category: 'English',
+    style: 'modern-cursive',
+    preview: 'Prosperity flows to me effortlessly',
+    description: 'Contemporary cursive handwriting style'
   },
   {
     id: 'english-print',
     name: 'Clear Print',
     category: 'English',
-    style: 'font-sans',
+    style: 'clear-print',
     preview: 'Success flows to me effortlessly',
     description: 'Clean, readable handwriting style'
+  },
+  {
+    id: 'english-decorative',
+    name: 'Decorative Hand',
+    category: 'English',
+    style: 'decorative-hand',
+    preview: 'I create abundance with ease',
+    description: 'Artistic handwriting with flourishes'
+  },
+  {
+    id: 'english-calligraphy',
+    name: 'Classic Calligraphy',
+    category: 'English',
+    style: 'classic-calligraphy',
+    preview: 'My dreams manifest beautifully',
+    description: 'Traditional calligraphy style'
   }
 ];
 
-export default function FontSelector() {
+export default function FontSelector({ onFontSelected, onPreviewWorksheet }: FontSelectorProps) {
   const [selectedFont, setSelectedFont] = useState<string | null>(null);
   const [selectedCategory, setSelectedCategory] = useState<'Chinese' | 'English' | 'All'>('All');
 
@@ -58,12 +95,15 @@ export default function FontSelector() {
 
   const handleFontSelect = (fontId: string) => {
     setSelectedFont(fontId);
+    if (onFontSelected) {
+      onFontSelected(fontId);
+    }
     console.log('Font selected:', fontId);
   };
 
-  const handleGenerateWorksheet = () => {
-    if (selectedFont) {
-      console.log('Generating worksheet with font:', selectedFont);
+  const handlePreviewWorksheet = () => {
+    if (selectedFont && onPreviewWorksheet) {
+      onPreviewWorksheet(selectedFont);
     }
   };
 
@@ -133,15 +173,15 @@ export default function FontSelector() {
         ))}
       </div>
 
-      {/* Generate Button */}
+      {/* Preview Button */}
       {selectedFont && (
         <div className="text-center">
           <Button 
             size="lg" 
-            onClick={handleGenerateWorksheet}
-            data-testid="button-generate-worksheet"
+            onClick={handlePreviewWorksheet}
+            data-testid="button-preview-worksheet"
           >
-            Generate My Worksheet
+            Preview & Download Worksheet
           </Button>
         </div>
       )}

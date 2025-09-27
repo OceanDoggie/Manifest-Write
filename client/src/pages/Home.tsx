@@ -10,10 +10,20 @@ import PreviewModal from "@/components/PreviewModal";
 export default function Home() {
   const [currentStep, setCurrentStep] = useState<'landing' | 'conversation' | 'fonts' | 'pricing'>('landing');
   const [isPreviewOpen, setIsPreviewOpen] = useState(false);
+  const [selectedFont, setSelectedFont] = useState<string>('elegant-script');
 
   const navigateToStep = (step: typeof currentStep) => {
     setCurrentStep(step);
     console.log('Navigating to step:', step);
+  };
+
+  const handleFontSelected = (fontId: string) => {
+    setSelectedFont(fontId);
+  };
+
+  const handlePreviewWorksheet = (fontId: string) => {
+    setSelectedFont(fontId);
+    setIsPreviewOpen(true);
   };
 
   return (
@@ -24,7 +34,6 @@ export default function Home() {
         <>
           <HeroSection />
           <ProcessOverview />
-          <PricingCards />
           
           {/* Navigation CTAs */}
           <section className="py-24 text-center">
@@ -32,13 +41,16 @@ export default function Home() {
               <h2 className="text-4xl font-serif font-bold text-foreground mb-8">
                 Ready to Transform Your Dreams?
               </h2>
+              <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
+                Create unlimited personalized affirmations and manifestation scripts completely free. Download beautiful practice worksheets when you're ready.
+              </p>
               <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
                 <button 
                   onClick={() => navigateToStep('conversation')}
                   className="px-8 py-4 bg-primary text-primary-foreground rounded-lg hover-elevate transition-all duration-300 text-lg font-semibold"
                   data-testid="button-start-conversation"
                 >
-                  Start My Manifestation Journey
+                  Start Creating for Free
                 </button>
                 <button 
                   onClick={() => setIsPreviewOpen(true)}
@@ -87,7 +99,10 @@ export default function Home() {
               ← Back to Conversation
             </button>
           </div>
-          <FontSelector />
+          <FontSelector 
+            onFontSelected={handleFontSelected}
+            onPreviewWorksheet={handlePreviewWorksheet}
+          />
         </section>
       )}
 
@@ -149,7 +164,8 @@ export default function Home() {
         isOpen={isPreviewOpen}
         onClose={() => setIsPreviewOpen(false)}
         worksheetType="affirmation"
-        price="$1.49"
+        price="$2.99"
+        selectedFont={selectedFont}
       />
     </div>
   );
