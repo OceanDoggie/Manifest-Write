@@ -14,7 +14,8 @@ export default function HeroSection() {
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${heroImage})` }}
       >
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-background/40 to-accent/30"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/30 via-accent/20 to-primary/20"></div>
+        <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-accent/10 to-primary/15"></div>
       </div>
 
       {/* Content */}
