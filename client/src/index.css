@@ -317,22 +317,26 @@
   }
 
   .mystical-symbol-bg::before {
-    content: "✧";
+    content: '';
     position: absolute;
     top: 10%;
     right: 15%;
-    font-size: 1.5rem;
-    color: hsla(285, 60%, 70%, 0.3);
+    width: 1.5rem;
+    height: 1.5rem;
+    background: radial-gradient(circle, hsla(285, 60%, 70%, 0.3) 30%, transparent 70%);
+    border-radius: 50%;
     animation: float 6s ease-in-out infinite;
   }
 
   .mystical-symbol-bg::after {
-    content: "☽";
+    content: '';
     position: absolute;
     bottom: 20%;
     left: 10%;
-    font-size: 1.2rem;
-    color: hsla(330, 40%, 75%, 0.4);
+    width: 1.2rem;
+    height: 1.2rem;
+    background: linear-gradient(45deg, hsla(330, 40%, 75%, 0.4) 0%, transparent 100%);
+    border-radius: 50%;
     animation: float 4s ease-in-out infinite reverse;
   }
 
@@ -364,6 +368,147 @@
   @keyframes float {
     0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.3; }
     50% { transform: translateY(-10px) rotate(5deg); opacity: 0.6; }
+  }
+
+  /* 贺卡样式 */
+  .greeting-card {
+    background: linear-gradient(135deg, 
+      hsla(285, 60%, 98%, 1) 0%, 
+      hsla(330, 40%, 96%, 0.95) 50%, 
+      hsla(285, 60%, 98%, 1) 100%);
+    border: 2px solid hsla(285, 60%, 85%, 0.3);
+    box-shadow: 
+      0 20px 60px hsla(285, 60%, 50%, 0.12),
+      0 8px 25px hsla(330, 40%, 60%, 0.08),
+      inset 0 1px 0 hsla(285, 60%, 95%, 0.8);
+    position: relative;
+  }
+
+  .dark .greeting-card {
+    background: linear-gradient(135deg, 
+      hsla(285, 60%, 15%, 0.95) 0%, 
+      hsla(330, 40%, 12%, 0.9) 50%, 
+      hsla(285, 60%, 15%, 0.95) 100%);
+    border: 2px solid hsla(285, 60%, 35%, 0.4);
+    box-shadow: 
+      0 20px 60px hsla(285, 60%, 20%, 0.3),
+      0 8px 25px hsla(330, 40%, 25%, 0.2),
+      inset 0 1px 0 hsla(285, 60%, 40%, 0.5);
+  }
+
+  .greeting-card-border {
+    position: relative;
+    padding: 2rem;
+  }
+
+  .greeting-card-border::before {
+    content: '';
+    position: absolute;
+    inset: 1rem;
+    border: 1px solid hsla(285, 60%, 70%, 0.2);
+    border-radius: 12px;
+    background: linear-gradient(45deg, 
+      transparent 0%, 
+      hsla(285, 60%, 85%, 0.1) 25%, 
+      transparent 50%, 
+      hsla(330, 40%, 85%, 0.1) 75%, 
+      transparent 100%);
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  .dark .greeting-card-border::before {
+    border: 1px solid hsla(285, 60%, 40%, 0.3);
+    background: linear-gradient(45deg, 
+      transparent 0%, 
+      hsla(285, 60%, 30%, 0.15) 25%, 
+      transparent 50%, 
+      hsla(330, 40%, 30%, 0.15) 75%, 
+      transparent 100%);
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  .greeting-card-corner {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    border: 2px solid hsla(285, 60%, 70%, 0.4);
+    pointer-events: none;
+  }
+
+  .greeting-card-corner::before {
+    content: '';
+    position: absolute;
+    inset: 4px;
+    background: hsla(285, 60%, 75%, 0.2);
+    border-radius: 2px;
+  }
+
+  .greeting-card-corner.top-left {
+    top: 1.5rem;
+    left: 1.5rem;
+    border-right: none;
+    border-bottom: none;
+    border-radius: 8px 0 0 0;
+  }
+
+  .greeting-card-corner.top-right {
+    top: 1.5rem;
+    right: 1.5rem;
+    border-left: none;
+    border-bottom: none;
+    border-radius: 0 8px 0 0;
+  }
+
+  .greeting-card-corner.bottom-left {
+    bottom: 1.5rem;
+    left: 1.5rem;
+    border-right: none;
+    border-top: none;
+    border-radius: 0 0 0 8px;
+  }
+
+  .greeting-card-corner.bottom-right {
+    bottom: 1.5rem;
+    right: 1.5rem;
+    border-left: none;
+    border-top: none;
+    border-radius: 0 0 8px 0;
+  }
+
+  .dark .greeting-card-corner {
+    border-color: hsla(285, 60%, 40%, 0.5);
+  }
+
+  .dark .greeting-card-corner::before {
+    background: hsla(285, 60%, 35%, 0.3);
+  }
+
+  .elegant-script {
+    font-family: 'Times New Roman', serif;
+    font-style: italic;
+    letter-spacing: 0.5px;
+    line-height: 1.8;
+  }
+
+  .calligraphy-practice {
+    border-bottom: 2px dotted hsla(285, 60%, 70%, 0.4);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+    min-height: 2.5rem;
+    background: linear-gradient(to right, 
+      transparent 0%, 
+      hsla(285, 60%, 90%, 0.1) 50%, 
+      transparent 100%);
+  }
+
+  .dark .calligraphy-practice {
+    border-bottom-color: hsla(285, 60%, 40%, 0.5);
+    background: linear-gradient(to right, 
+      transparent 0%, 
+      hsla(285, 60%, 20%, 0.15) 50%, 
+      transparent 100%);
   }
 }
 
